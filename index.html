@@ -13,7 +13,8 @@
             --accent-color: #F47920;
             --text-dark: #333;
             --text-light: #666;
-            --bg-light: #f4f4f4;
+            --bg-body: #e0e0e0; /* Fond de l'arrière-plan général (plus foncé) */
+            --bg-paper: #fafafa; /* Fond du CV (Gris très pâle anti-éblouissement) */
             --white: #ffffff;
         }
 
@@ -21,9 +22,9 @@
 
         body {
             font-family: 'Roboto', sans-serif;
-            background: var(--bg-light);
+            background: var(--bg-body);
             color: var(--text-dark);
-            line-height: 1.4; /* Réduit légèrement l'interligne global */
+            line-height: 1.4;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
@@ -32,7 +33,7 @@
         .page {
             width: 21cm;
             min-height: 29.7cm;
-            background: var(--white);
+            background: var(--bg-paper); /* ICI : Le gris pâle pour les yeux */
             margin: 20px auto;
             display: grid;
             grid-template-columns: 32% 68%;
@@ -44,17 +45,18 @@
         .sidebar {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 20px 15px; /* Marge interne réduite */
+            padding: 20px 15px; 
             text-align: left;
         }
 
-        .logo-container { text-align: center; margin-bottom: 15px; } /* Marge réduite */
+        .logo-container { text-align: center; margin-bottom: 15px; }
         .logo-container img {
-            max-width: 85px; /* Logo légèrement plus petit pour gagner de la place */
-            background: white; border-radius: 50%; padding: 4px;
+            max-width: 85px; 
+            background: var(--bg-paper); /* Le fond du logo s'adapte aussi */
+            border-radius: 50%; padding: 4px;
         }
 
-        .contact-info { margin-bottom: 20px; font-size: 0.8rem; } /* Marge réduite */
+        .contact-info { margin-bottom: 20px; font-size: 0.8rem; }
         .contact-item {
             margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
             padding-right: 5px; 
@@ -68,20 +70,20 @@
             color: var(--accent-color); font-weight: 700; text-transform: uppercase;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             padding-bottom: 2px; 
-            margin-bottom: 8px; /* Marge réduite */
-            margin-top: 15px;   /* Marge réduite */
+            margin-bottom: 8px; 
+            margin-top: 15px; 
             font-size: 0.9rem;
         }
 
         .skills-list { list-style: none; font-size: 0.8rem; }
         .skills-list li {
-            margin-bottom: 5px; /* Espacement réduit entre les items */
+            margin-bottom: 5px; 
             background: rgba(255,255,255,0.1);
             padding: 3px 8px; border-radius: 4px;
         }
 
         /* COLONNE DROITE COMPACTÉE */
-        .main-content { padding: 25px 30px; } /* Padding réduit */
+        .main-content { padding: 25px 30px; }
 
         .header-name h1 {
             font-size: 2rem; color: var(--primary-color);
@@ -106,7 +108,7 @@
             margin-top: 15px;
         }
 
-        .experience-item, .education-item { margin-bottom: 15px; } /* Espacement réduit entre les jobs */
+        .experience-item, .education-item { margin-bottom: 15px; }
         
         .job-header {
             display: flex; justify-content: space-between;
@@ -146,6 +148,7 @@
         @media screen and (max-width: 768px) {
             .page {
                 width: 100%; margin: 0; grid-template-columns: 1fr; height: auto; box-shadow: none;
+                background: var(--bg-paper); /* Garde le gris pâle sur mobile */
             }
             .sidebar { text-align: center; padding: 20px; }
             .contact-item { justify-content: center; }
@@ -157,21 +160,23 @@
             .lang-toggle { top: auto; bottom: 20px; right: 20px; opacity: 0.9; }
         }
 
-        /* --- IMPRESSION (Force le format A4 compact) --- */
+        /* --- IMPRESSION (Force le format A4 compact ET BLANC) --- */
         @media print {
             .lang-toggle { display: none; }
             @page { margin: 0; size: auto; }
             body { margin: 0; padding: 0; }
             .page { 
                 margin: 0; width: 100%; height: 100%; box-shadow: none; 
-                grid-template-columns: 32% 68%; 
+                grid-template-columns: 32% 68%;
+                background: white !important; /* Force le BLANC pour économiser l'encre */
             }
-            /* Assure que la sidebar reste à gauche en impression */
             .sidebar { text-align: left; padding: 20px 15px; }
             .contact-item { justify-content: flex-start; }
             .skills-list { display: block; }
             .skills-list li { display: list-item; margin-bottom: 5px; }
             .job-header { flex-direction: row; align-items: baseline; }
+            /* Réinitialise le fond du logo pour l'impression */
+            .logo-container img { background: white !important; }
         }
     </style>
 </head>
