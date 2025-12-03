@@ -138,14 +138,19 @@
         .lang-toggle {
             position: fixed; top: 20px; right: 20px;
             padding: 10px 20px; 
-            background: var(--accent-main); 
-            color: var(--primary-color); 
-            border: 2px solid var(--white); 
+            background: var(--primary-color); 
+            color: var(--white); 
+            border: 2px solid var(--accent-main); 
             border-radius: 5px; cursor: pointer;
-            font-weight: 800; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+            font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             z-index: 1000; font-family: sans-serif;
+            transition: all 0.3s ease;
         }
-        .lang-toggle:hover { background: var(--white); color: var(--accent-main); border-color: var(--accent-main); }
+        .lang-toggle:hover { 
+            background: var(--white); 
+            color: var(--primary-color); 
+            border-color: var(--primary-color); 
+        }
 
         @media screen and (max-width: 768px) {
             .page {
