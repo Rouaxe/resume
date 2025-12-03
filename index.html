@@ -23,11 +23,12 @@
             font-family: 'Roboto', sans-serif;
             background: var(--bg-light);
             color: var(--text-dark);
-            line-height: 1.5;
+            line-height: 1.4; /* Réduit légèrement l'interligne global */
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
 
+        /* --- STYLE DESKTOP (Format A4 strict) --- */
         .page {
             width: 21cm;
             min-height: 29.7cm;
@@ -39,86 +40,95 @@
             overflow: hidden;
         }
 
+        /* COLONNE GAUCHE COMPACTÉE */
         .sidebar {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 25px 15px; 
+            padding: 20px 15px; /* Marge interne réduite */
             text-align: left;
         }
 
-        .logo-container { text-align: center; margin-bottom: 25px; }
+        .logo-container { text-align: center; margin-bottom: 15px; } /* Marge réduite */
         .logo-container img {
-            max-width: 100px; background: white; border-radius: 50%; padding: 5px;
+            max-width: 85px; /* Logo légèrement plus petit pour gagner de la place */
+            background: white; border-radius: 50%; padding: 4px;
         }
 
-        .contact-info { margin-bottom: 25px; font-size: 0.85rem; }
+        .contact-info { margin-bottom: 20px; font-size: 0.8rem; } /* Marge réduite */
         .contact-item {
-            margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+            margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
             padding-right: 5px; 
         }
         .contact-text {
             word-break: break-all; 
-            font-size: 0.8rem; line-height: 1.2;
+            font-size: 0.75rem; line-height: 1.2;
         }
 
         .section-title-side {
             color: var(--accent-color); font-weight: 700; text-transform: uppercase;
             border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 3px; margin-bottom: 10px; margin-top: 20px;
-            font-size: 0.95rem;
+            padding-bottom: 2px; 
+            margin-bottom: 8px; /* Marge réduite */
+            margin-top: 15px;   /* Marge réduite */
+            font-size: 0.9rem;
         }
 
-        .skills-list { list-style: none; font-size: 0.85rem; }
+        .skills-list { list-style: none; font-size: 0.8rem; }
         .skills-list li {
-            margin-bottom: 6px; background: rgba(255,255,255,0.1);
-            padding: 4px 8px; border-radius: 4px;
+            margin-bottom: 5px; /* Espacement réduit entre les items */
+            background: rgba(255,255,255,0.1);
+            padding: 3px 8px; border-radius: 4px;
         }
 
-        .main-content { padding: 30px 35px; }
+        /* COLONNE DROITE COMPACTÉE */
+        .main-content { padding: 25px 30px; } /* Padding réduit */
 
         .header-name h1 {
-            font-size: 2.2rem; color: var(--primary-color);
-            line-height: 1.1; text-transform: uppercase; margin-bottom: 5px;
+            font-size: 2rem; color: var(--primary-color);
+            line-height: 1; text-transform: uppercase; margin-bottom: 5px;
         }
         .header-name h2 {
-            font-size: 1.1rem; color: var(--accent-color);
-            font-weight: 500; margin-bottom: 15px;
+            font-size: 1rem; color: var(--accent-color);
+            font-weight: 500; margin-bottom: 10px;
         }
 
         .profile-summary {
-            color: var(--text-light); margin-bottom: 25px;
-            font-style: italic; font-size: 0.9rem; text-align: justify;
+            color: var(--text-light); margin-bottom: 20px;
+            font-style: italic; font-size: 0.85rem; text-align: justify;
         }
 
         .section-title-main {
-            font-size: 1.1rem; color: var(--primary-color);
+            font-size: 1rem; color: var(--primary-color);
             text-transform: uppercase; font-weight: 700;
             border-bottom: 2px solid var(--accent-color);
-            padding-bottom: 3px; margin-bottom: 15px; margin-top: 20px;
+            padding-bottom: 3px; 
+            margin-bottom: 15px; 
+            margin-top: 15px;
         }
 
-        .experience-item, .education-item { margin-bottom: 20px; }
+        .experience-item, .education-item { margin-bottom: 15px; } /* Espacement réduit entre les jobs */
         
         .job-header {
             display: flex; justify-content: space-between;
-            align-items: baseline; margin-bottom: 3px;
+            align-items: baseline; margin-bottom: 2px;
         }
-        .job-title { font-weight: 700; font-size: 1rem; color: var(--text-dark); }
-        .job-company { font-weight: 500; font-size: 0.95rem; color: var(--accent-color); }
+        .job-title { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
+        .job-company { font-weight: 500; font-size: 0.9rem; color: var(--accent-color); }
         .job-date {
-            font-size: 0.8rem; color: var(--text-light);
-            text-align: right; min-width: 110px;
+            font-size: 0.75rem; color: var(--text-light);
+            text-align: right; min-width: 100px;
         }
 
-        .job-desc { list-style: none; color: var(--text-light); font-size: 0.9rem; }
+        .job-desc { list-style: none; color: var(--text-light); font-size: 0.85rem; }
         .job-desc li {
-            margin-bottom: 3px; padding-left: 12px; position: relative;
+            margin-bottom: 2px; padding-left: 12px; position: relative;
         }
         .job-desc li::before {
             content: "▹"; position: absolute; left: 0;
             font-size: 0.8em; top: 2px; color: var(--primary-color);
         }
 
+        /* --- GESTION LANGUES --- */
         .en-only { display: none !important; }
         [lang="en"] .fr-only { display: none !important; }
         [lang="en"] .en-only { display: block !important; }
@@ -132,11 +142,36 @@
             z-index: 1000; font-family: sans-serif;
         }
 
+        /* --- RESPONSIVE MOBILE --- */
+        @media screen and (max-width: 768px) {
+            .page {
+                width: 100%; margin: 0; grid-template-columns: 1fr; height: auto; box-shadow: none;
+            }
+            .sidebar { text-align: center; padding: 20px; }
+            .contact-item { justify-content: center; }
+            .main-content { padding: 20px; }
+            .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
+            .skills-list li { display: inline-block; margin: 0; font-size: 0.8rem; }
+            .job-header { flex-direction: column; align-items: flex-start; }
+            .job-date { text-align: left; margin-bottom: 5px; font-style: italic; }
+            .lang-toggle { top: auto; bottom: 20px; right: 20px; opacity: 0.9; }
+        }
+
+        /* --- IMPRESSION (Force le format A4 compact) --- */
         @media print {
             .lang-toggle { display: none; }
             @page { margin: 0; size: auto; }
             body { margin: 0; padding: 0; }
-            .page { margin: 0; width: 100%; height: 100%; box-shadow: none; }
+            .page { 
+                margin: 0; width: 100%; height: 100%; box-shadow: none; 
+                grid-template-columns: 32% 68%; 
+            }
+            /* Assure que la sidebar reste à gauche en impression */
+            .sidebar { text-align: left; padding: 20px 15px; }
+            .contact-item { justify-content: flex-start; }
+            .skills-list { display: block; }
+            .skills-list li { display: list-item; margin-bottom: 5px; }
+            .job-header { flex-direction: row; align-items: baseline; }
         }
     </style>
 </head>
@@ -204,10 +239,11 @@
                 <span class="fr-only">Intérêts</span>
                 <span class="en-only">Interests</span>
             </div>
-            <div style="font-size:0.8rem; opacity:0.9;">
-                <span class="fr-only">Rugby • Escalade • Jeux Vidéo • Tech • Danse tahitienne</span>
-                <span class="en-only">Rugby • Climbing • Video Games • Tech • Tahitian Dance</span>
-            </div>
+            <ul class="skills-list">
+               <li><span class="fr-only">Rugby / Escalade</span><span class="en-only">Rugby / Climbing</span></li>
+               <li><span class="fr-only">Jeux Vidéo / Tech</span><span class="en-only">Video Games / Tech</span></li>
+               <li><span class="fr-only">Danse tahitienne</span><span class="en-only">Tahitian Dance</span></li>
+            </ul>
         </aside>
 
         <main class="main-content">
