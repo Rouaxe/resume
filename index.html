@@ -10,11 +10,12 @@
     <style>
         :root {
             --primary-color: #2E1A47;
-            --accent-color: #F47920;
+            --accent-sidebar: #F47920;
+            --accent-main: #D65000;
             --text-dark: #333;
             --text-light: #666;
-            --bg-body: #e0e0e0; /* Fond de l'arrière-plan général (plus foncé) */
-            --bg-paper: #fafafa; /* Fond du CV (Gris très pâle anti-éblouissement) */
+            --bg-body: #e0e0e0;
+            --bg-paper: #fafafa;
             --white: #ffffff;
         }
 
@@ -29,11 +30,10 @@
             print-color-adjust: exact;
         }
 
-        /* --- STYLE DESKTOP (Format A4 strict) --- */
         .page {
             width: 21cm;
             min-height: 29.7cm;
-            background: var(--bg-paper); /* ICI : Le gris pâle pour les yeux */
+            background: var(--bg-paper);
             margin: 20px auto;
             display: grid;
             grid-template-columns: 32% 68%;
@@ -41,7 +41,6 @@
             overflow: hidden;
         }
 
-        /* COLONNE GAUCHE COMPACTÉE */
         .sidebar {
             background-color: var(--primary-color);
             color: var(--white);
@@ -52,7 +51,7 @@
         .logo-container { text-align: center; margin-bottom: 15px; }
         .logo-container img {
             max-width: 85px; 
-            background: var(--bg-paper); /* Le fond du logo s'adapte aussi */
+            background: var(--bg-paper);
             border-radius: 50%; padding: 4px;
         }
 
@@ -67,7 +66,8 @@
         }
 
         .section-title-side {
-            color: var(--accent-color); font-weight: 700; text-transform: uppercase;
+            color: var(--accent-sidebar); 
+            font-weight: 700; text-transform: uppercase;
             border-bottom: 1px solid rgba(255,255,255,0.2);
             padding-bottom: 2px; 
             margin-bottom: 8px; 
@@ -82,7 +82,6 @@
             padding: 3px 8px; border-radius: 4px;
         }
 
-        /* COLONNE DROITE COMPACTÉE */
         .main-content { padding: 25px 30px; }
 
         .header-name h1 {
@@ -90,7 +89,7 @@
             line-height: 1; text-transform: uppercase; margin-bottom: 5px;
         }
         .header-name h2 {
-            font-size: 1rem; color: var(--accent-color);
+            font-size: 1rem; color: var(--accent-main);
             font-weight: 500; margin-bottom: 10px;
         }
 
@@ -102,7 +101,7 @@
         .section-title-main {
             font-size: 1rem; color: var(--primary-color);
             text-transform: uppercase; font-weight: 700;
-            border-bottom: 2px solid var(--accent-color);
+            border-bottom: 2px solid var(--accent-main);
             padding-bottom: 3px; 
             margin-bottom: 15px; 
             margin-top: 15px;
@@ -115,7 +114,7 @@
             align-items: baseline; margin-bottom: 2px;
         }
         .job-title { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
-        .job-company { font-weight: 500; font-size: 0.9rem; color: var(--accent-color); }
+        .job-company { font-weight: 500; font-size: 0.9rem; color: var(--accent-main); }
         .job-date {
             font-size: 0.75rem; color: var(--text-light);
             text-align: right; min-width: 100px;
@@ -130,7 +129,6 @@
             font-size: 0.8em; top: 2px; color: var(--primary-color);
         }
 
-        /* --- GESTION LANGUES --- */
         .en-only { display: none !important; }
         [lang="en"] .fr-only { display: none !important; }
         [lang="en"] .en-only { display: block !important; }
@@ -138,17 +136,16 @@
 
         .lang-toggle {
             position: fixed; top: 20px; right: 20px;
-            padding: 10px 20px; background: var(--accent-color); color: white;
+            padding: 10px 20px; background: var(--accent-main); color: white;
             border: none; border-radius: 5px; cursor: pointer;
             font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
             z-index: 1000; font-family: sans-serif;
         }
 
-        /* --- RESPONSIVE MOBILE --- */
         @media screen and (max-width: 768px) {
             .page {
                 width: 100%; margin: 0; grid-template-columns: 1fr; height: auto; box-shadow: none;
-                background: var(--bg-paper); /* Garde le gris pâle sur mobile */
+                background: var(--bg-paper);
             }
             .sidebar { text-align: center; padding: 20px; }
             .contact-item { justify-content: center; }
@@ -160,7 +157,6 @@
             .lang-toggle { top: auto; bottom: 20px; right: 20px; opacity: 0.9; }
         }
 
-        /* --- IMPRESSION (Force le format A4 compact ET BLANC) --- */
         @media print {
             .lang-toggle { display: none; }
             @page { margin: 0; size: auto; }
@@ -168,14 +164,13 @@
             .page { 
                 margin: 0; width: 100%; height: 100%; box-shadow: none; 
                 grid-template-columns: 32% 68%;
-                background: white !important; /* Force le BLANC pour économiser l'encre */
+                background: white !important;
             }
             .sidebar { text-align: left; padding: 20px 15px; }
             .contact-item { justify-content: flex-start; }
             .skills-list { display: block; }
             .skills-list li { display: list-item; margin-bottom: 5px; }
             .job-header { flex-direction: row; align-items: baseline; }
-            /* Réinitialise le fond du logo pour l'impression */
             .logo-container img { background: white !important; }
         }
     </style>
@@ -187,7 +182,7 @@
     <div class="page">
         <aside class="sidebar">
             <div class="logo-container">
-                <img src="logo.png" alt="M" onerror="this.style.display='none'; this.parentNode.innerHTML='<h1 style=\'font-size:3em; color:var(--accent-color)\'>M</h1>'">
+                <img src="logo.png" alt="M" onerror="this.style.display='none'; this.parentNode.innerHTML='<h1 style=\'font-size:3em; color:var(--accent-sidebar)\'>M</h1>'">
             </div>
 
             <div class="contact-info">
