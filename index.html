@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Clément Maillot</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2E1A47;
+            --accent-color: #F47920;
+            --text-dark: #333;
+            --text-light: #666;
+            --bg-light: #f4f4f4;
+            --white: #ffffff;
+        }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background: var(--bg-light);
+            color: var(--text-dark);
+            line-height: 1.5;
+            -webkit-print-color-adjust: exact;
+            print-color-adjust: exact;
+        }
+
+        .page {
+            width: 21cm;
+            min-height: 29.7cm;
+            background: var(--white);
+            margin: 20px auto;
+            display: grid;
+            grid-template-columns: 32% 68%;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            overflow: hidden;
+        }
+
+        .sidebar {
+            background-color: var(--primary-color);
+            color: var(--white);
+            padding: 25px 15px; 
+            text-align: left;
+        }
+
+        .logo-container { text-align: center; margin-bottom: 25px; }
+        .logo-container img {
+            max-width: 100px; background: white; border-radius: 50%; padding: 5px;
+        }
+
+        .contact-info { margin-bottom: 25px; font-size: 0.85rem; }
+        .contact-item {
+            margin-bottom: 10px; display: flex; align-items: center; gap: 8px;
+            padding-right: 5px; 
+        }
+        .contact-text {
+            word-break: break-all; 
+            font-size: 0.8rem; line-height: 1.2;
+        }
+
+        .section-title-side {
+            color: var(--accent-color); font-weight: 700; text-transform: uppercase;
+            border-bottom: 1px solid rgba(255,255,255,0.2);
+            padding-bottom: 3px; margin-bottom: 10px; margin-top: 20px;
+            font-size: 0.95rem;
+        }
+
+        .skills-list { list-style: none; font-size: 0.85rem; }
+        .skills-list li {
+            margin-bottom: 6px; background: rgba(255,255,255,0.1);
+            padding: 4px 8px; border-radius: 4px;
+        }
+
+        .main-content { padding: 30px 35px; }
+
+        .header-name h1 {
+            font-size: 2.2rem; color: var(--primary-color);
+            line-height: 1.1; text-transform: uppercase; margin-bottom: 5px;
+        }
+        .header-name h2 {
+            font-size: 1.1rem; color: var(--accent-color);
+            font-weight: 500; margin-bottom: 15px;
+        }
+
+        .profile-summary {
+            color: var(--text-light); margin-bottom: 25px;
+            font-style: italic; font-size: 0.9rem; text-align: justify;
+        }
+
+        .section-title-main {
+            font-size: 1.1rem; color: var(--primary-color);
+            text-transform: uppercase; font-weight: 700;
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 3px; margin-bottom: 15px; margin-top: 20px;
+        }
+
+        .experience-item, .education-item { margin-bottom: 20px; }
+        
+        .job-header {
+            display: flex; justify-content: space-between;
+            align-items: baseline; margin-bottom: 3px;
+        }
+        .job-title { font-weight: 700; font-size: 1rem; color: var(--text-dark); }
+        .job-company { font-weight: 500; font-size: 0.95rem; color: var(--accent-color); }
+        .job-date {
+            font-size: 0.8rem; color: var(--text-light);
+            text-align: right; min-width: 110px;
+        }
+
+        .job-desc { list-style: none; color: var(--text-light); font-size: 0.9rem; }
+        .job-desc li {
+            margin-bottom: 3px; padding-left: 12px; position: relative;
+        }
+        .job-desc li::before {
+            content: "▹"; position: absolute; left: 0;
+            font-size: 0.8em; top: 2px; color: var(--primary-color);
+        }
+
+        .en-only { display: none !important; }
+        [lang="en"] .fr-only { display: none !important; }
+        [lang="en"] .en-only { display: block !important; }
+        [lang="en"] span.en-only { display: inline !important; }
+
+        .lang-toggle {
+            position: fixed; top: 20px; right: 20px;
+            padding: 10px 20px; background: var(--accent-color); color: white;
+            border: none; border-radius: 5px; cursor: pointer;
+            font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            z-index: 1000; font-family: sans-serif;
+        }
+
+        @media print {
+            .lang-toggle { display: none; }
+            @page { margin: 0; size: auto; }
+            body { margin: 0; padding: 0; }
+            .page { margin: 0; width: 100%; height: 100%; box-shadow: none; }
+        }
+    </style>
+</head>
+<body lang="fr">
+
+    <button class="lang-toggle" onclick="toggleLang()">Switch FR / EN</button>
+
+    <div class="page">
+        <aside class="sidebar">
+            <div class="logo-container">
+                <img src="logo.png" alt="M" onerror="this.style.display='none'; this.parentNode.innerHTML='<h1 style=\'font-size:3em; color:var(--accent-color)\'>M</h1>'">
+            </div>
+
+            <div class="contact-info">
+                <div class="contact-item"><span>📍</span> <span class="contact-text">Brossard, QC</span></div>
+                <div class="contact-item"><span>📞</span> <span class="contact-text">418 429-8166</span></div>
+                <div class="contact-item"><span>✉️</span> <span class="contact-text">clement.maillot.qc@gmail.com</span></div>
+            </div>
+
+            <div class="section-title-side">
+                <span class="fr-only">Compétences</span>
+                <span class="en-only">Skills</span>
+            </div>
+            <ul class="skills-list">
+                <li>
+                    <strong class="fr-only">Web Front:</strong><strong class="en-only">Web Front:</strong> 
+                    React, Vue.js, HTML, CSS
+                </li>
+                <li>
+                    <strong class="fr-only">Back-End:</strong><strong class="en-only">Back-End:</strong> 
+                    PHP, Laravel, Java, C#, SQL
+                </li>
+                <li>
+                    <strong class="fr-only">Outils:</strong><strong class="en-only">Tools:</strong> 
+                    JIRA, Confluence, Google Workspace, Git
+                </li>
+                <li>
+                    <strong class="fr-only">Créatif:</strong><strong class="en-only">Creative:</strong> 
+                    Ps, Ai, Pr, Ae
+                </li>
+            </ul>
+
+            <div class="section-title-side">
+                <span class="fr-only">Qualités</span>
+                <span class="en-only">Soft Skills</span>
+            </div>
+            <ul class="skills-list">
+                <li><span class="fr-only">• Leadership</span><span class="en-only">• Leadership</span></li>
+                <li><span class="fr-only">• Résolution de problèmes</span><span class="en-only">• Problem Solving</span></li>
+                <li><span class="fr-only">• Dynamique & Déterminé</span><span class="en-only">• Dynamic & Determined</span></li>
+                <li><span class="fr-only">• Sens du service</span><span class="en-only">• Customer Oriented</span></li>
+            </ul>
+
+            <div class="section-title-side">
+                <span class="fr-only">Langues</span>
+                <span class="en-only">Languages</span>
+            </div>
+            <ul class="skills-list">
+                <li><span class="fr-only">Français (Natif)</span><span class="en-only">French (Native)</span></li>
+                <li><span class="fr-only">Anglais (Courant)</span><span class="en-only">English (Fluent)</span></li>
+                <li><span class="fr-only">Allemand (Intermédiaire)</span><span class="en-only">German (Intermediate)</span></li>
+            </ul>
+            
+             <div class="section-title-side">
+                <span class="fr-only">Intérêts</span>
+                <span class="en-only">Interests</span>
+            </div>
+            <div style="font-size:0.8rem; opacity:0.9;">
+                <span class="fr-only">Rugby • Escalade • Jeux Vidéo • Tech • Danse tahitienne</span>
+                <span class="en-only">Rugby • Climbing • Video Games • Tech • Tahitian Dance</span>
+            </div>
+        </aside>
+
+        <main class="main-content">
+            <header class="header-name">
+                <h1>Clément Maillot</h1>
+                <h2>
+                    <span class="fr-only">Team Lead OPS & Développeur</span>
+                    <span class="en-only">Team Lead OPS & Developer</span>
+                </h2>
+                
+                <p class="profile-summary fr-only">
+                    Professionnel passionné par la technologie et la gestion opérationnelle. Fort d'une double compétence en développement web et en support technique, je me spécialise aujourd'hui dans la coordination d'équipes et l'optimisation des processus.
+                </p>
+                <p class="profile-summary en-only">
+                    Passionate professional with expertise in technology and operational management. With a dual background in web development and technical support, I now specialize in team coordination and process optimization.
+                </p>
+            </header>
+
+            <div class="section-title-main">
+                <span class="fr-only">Expériences Professionnelles</span>
+                <span class="en-only">Professional Experience</span>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">Team Lead OPS</div>
+                        <div class="job-company">
+                            <span class="fr-only">Solutions Médias 360, Montréal</span>
+                            <span class="en-only">Solutions Médias 360, Montreal</span>
+                        </div>
+                    </div>
+                    <div class="job-date">
+                        <span class="fr-only">Déc 2024 – Présent</span>
+                        <span class="en-only">Dec 2024 – Present</span>
+                    </div>
+                </div>
+                <ul class="job-desc fr-only">
+                    <li><i>(Remplacement de déc. 2024 à avril 2025, titularisé depuis mai 2025)</i></li>
+                    <li>Supervision de l'équipe des opérations, gestion des plannings et priorités.</li>
+                    <li>Point de contact principal pour les escalades techniques (Niveau 2/3).</li>
+                    <li>Formation continue et coaching des nouveaux techniciens.</li>
+                    <li>Optimisation des KPIs et des processus de support.</li>
+                </ul>
+                <ul class="job-desc en-only">
+                    <li><i>(Acting role from Dec 2024 to April 2025, Full-time since May 2025)</i></li>
+                    <li>Supervision of the operations team, management of schedules and priorities.</li>
+                    <li>Main point of contact for technical escalations (Tier 2/3).</li>
+                    <li>Continuous training and coaching of new technicians.</li>
+                    <li>Optimization of KPIs and support processes.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">
+                            <span class="fr-only">Technicien Support Ops</span>
+                            <span class="en-only">Ops Support Technician</span>
+                        </div>
+                        <div class="job-company">
+                            <span class="fr-only">Solutions Médias 360, Montréal</span>
+                            <span class="en-only">Solutions Médias 360, Montreal</span>
+                        </div>
+                    </div>
+                    <div class="job-date">
+                        <span class="fr-only">Fév 2022 – Déc 2024</span>
+                        <span class="en-only">Feb 2022 – Dec 2024</span>
+                    </div>
+                </div>
+                <ul class="job-desc fr-only">
+                    <li>Support technique et gestion d'inventaire.</li>
+                    <li>Installation et configuration de services (sites web, outils internes).</li>
+                    <li>Gestion des DNS et des résiliations de services.</li>
+                    <li>Communication avec les fournisseurs tiers pour la résolution d'incidents.</li>
+                </ul>
+                <ul class="job-desc en-only">
+                    <li>Technical support and inventory management.</li>
+                    <li>Installation and configuration of services (websites, internal tools).</li>
+                    <li>DNS management and service terminations.</li>
+                    <li>Communication with third-party providers for incident resolution.</li>
+                </ul>
+            </div>
+
+            <div class="experience-item">
+                <div class="job-header">
+                    <div>
+                        <div class="job-title">
+                            <span class="fr-only">Développeur Front-End</span>
+                            <span class="en-only">Front-End Developer</span>
+                        </div>
+                        <div class="job-company">
+                            <span class="fr-only">JurisConcept, Québec</span>
+                            <span class="en-only">JurisConcept, Quebec</span>
+                        </div>
+                    </div>
+                    <div class="job-date">
+                        <span class="fr-only">Juil 2021 – Fév 2022</span>
+                        <span class="en-only">Jul 2021 – Feb 2022</span>
+                    </div>
+                </div>
+                <ul class="job-desc fr-only">
+                    <li>Développement d'interfaces utilisateur (UI) pour logiciel interne.</li>
+                    <li>Intégration et maintenance en React.js.</li>
+                </ul>
+                <ul class="job-desc en-only">
+                    <li>Development of User Interfaces (UI) for internal software.</li>
+                    <li>Integration and maintenance using React.js.</li>
+                </ul>
+            </div>
+
+            <div class="section-title-main">
+                <span class="fr-only">Formation</span>
+                <span class="en-only">Education</span>
+            </div>
+
+            <div class="education-item">
+                <div class="job-header">
+                    <div class="job-title">
+                        <span class="fr-only">Technique d'intégration multimédia</span>
+                        <span class="en-only">Multimedia Integration Technique</span>
+                    </div>
+                    <div class="job-date">2018 – 2021</div>
+                </div>
+                <div class="job-company">
+                    <span class="fr-only">Cégep de Matane, Québec</span>
+                    <span class="en-only">Cégep de Matane, Quebec</span>
+                </div>
+            </div>
+
+            <div class="education-item">
+                <div class="job-header">
+                    <div class="job-title">
+                        <span class="fr-only">BTS Services informatiques (SIO)</span>
+                        <span class="en-only">HND in Computer Services (BTS SIO)</span>
+                    </div>
+                    <div class="job-date">2016 – 2018</div>
+                </div>
+                <div class="job-company">
+                    <span class="fr-only">Lycée Bellepierre, Réunion</span>
+                    <span class="en-only">Lycée Bellepierre, Reunion Island</span>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        function toggleLang() {
+            const body = document.body;
+            if (body.getAttribute('lang') === 'fr') {
+                body.setAttribute('lang', 'en');
+            } else {
+                body.setAttribute('lang', 'fr');
+            }
+        }
+    </script>
+</body>
+</html>
