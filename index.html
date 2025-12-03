@@ -11,9 +11,9 @@
         :root {
             --primary-color: #2E1A47;
             --accent-sidebar: #F47920;
-            --accent-main: #D65000;
+            --accent-main: #CC4400;
             --text-dark: #333;
-            --text-light: #666;
+            --text-light: #555;
             --bg-body: #e0e0e0;
             --bg-paper: #fafafa;
             --white: #ffffff;
@@ -25,7 +25,7 @@
             font-family: 'Roboto', sans-serif;
             background: var(--bg-body);
             color: var(--text-dark);
-            line-height: 1.4;
+            line-height: 1.5;
             -webkit-print-color-adjust: exact;
             print-color-adjust: exact;
         }
@@ -44,89 +44,90 @@
         .sidebar {
             background-color: var(--primary-color);
             color: var(--white);
-            padding: 20px 15px; 
+            padding: 25px 20px; 
             text-align: left;
         }
 
-        .logo-container { text-align: center; margin-bottom: 15px; }
+        .logo-container { text-align: center; margin-bottom: 20px; }
         .logo-container img {
-            max-width: 85px; 
+            max-width: 90px; 
             background: var(--bg-paper);
             border-radius: 50%; padding: 4px;
         }
 
-        .contact-info { margin-bottom: 20px; font-size: 0.8rem; }
+        .contact-info { margin-bottom: 25px; font-size: 0.85rem; }
         .contact-item {
-            margin-bottom: 8px; display: flex; align-items: center; gap: 8px;
+            margin-bottom: 10px; display: flex; align-items: center; gap: 10px;
             padding-right: 5px; 
         }
         .contact-text {
             word-break: break-all; 
-            font-size: 0.75rem; line-height: 1.2;
+            font-size: 0.8rem; line-height: 1.3;
         }
 
-        .section-title-side {
-            color: var(--accent-sidebar); 
+        h3.section-title-side {
+            color: var(--white); 
             font-weight: 700; text-transform: uppercase;
-            border-bottom: 1px solid rgba(255,255,255,0.2);
-            padding-bottom: 2px; 
-            margin-bottom: 8px; 
-            margin-top: 15px; 
-            font-size: 0.9rem;
+            border-bottom: 2px solid var(--accent-sidebar);
+            padding-bottom: 4px; 
+            margin-bottom: 12px; 
+            margin-top: 25px; 
+            font-size: 1rem;
+            letter-spacing: 0.5px;
         }
 
-        .skills-list { list-style: none; font-size: 0.8rem; }
+        .skills-list { list-style: none; font-size: 0.85rem; }
         .skills-list li {
-            margin-bottom: 5px; 
+            margin-bottom: 8px; 
             background: rgba(255,255,255,0.1);
-            padding: 3px 8px; border-radius: 4px;
+            padding: 5px 10px; border-radius: 4px;
         }
 
-        .main-content { padding: 25px 30px; }
+        .main-content { padding: 30px 35px; }
 
         .header-name h1 {
-            font-size: 2rem; color: var(--primary-color);
-            line-height: 1; text-transform: uppercase; margin-bottom: 5px;
+            font-size: 2.2rem; color: var(--primary-color);
+            line-height: 1.1; text-transform: uppercase; margin-bottom: 8px;
         }
         .header-name h2 {
-            font-size: 1rem; color: var(--accent-main);
-            font-weight: 500; margin-bottom: 10px;
+            font-size: 1.1rem; color: var(--accent-main);
+            font-weight: 500; margin-bottom: 15px;
         }
 
         .profile-summary {
-            color: var(--text-light); margin-bottom: 20px;
-            font-style: italic; font-size: 0.85rem; text-align: justify;
+            color: var(--text-light); margin-bottom: 25px;
+            font-style: italic; font-size: 0.9rem; text-align: left;
         }
 
-        .section-title-main {
-            font-size: 1rem; color: var(--primary-color);
+        h3.section-title-main {
+            font-size: 1.1rem; color: var(--primary-color);
             text-transform: uppercase; font-weight: 700;
             border-bottom: 2px solid var(--accent-main);
-            padding-bottom: 3px; 
-            margin-bottom: 15px; 
-            margin-top: 15px;
+            padding-bottom: 4px; 
+            margin-bottom: 20px; 
+            margin-top: 20px;
         }
 
-        .experience-item, .education-item { margin-bottom: 15px; }
+        .experience-item, .education-item { margin-bottom: 20px; }
         
         .job-header {
             display: flex; justify-content: space-between;
-            align-items: baseline; margin-bottom: 2px;
+            align-items: baseline; margin-bottom: 4px;
         }
-        .job-title { font-weight: 700; font-size: 0.95rem; color: var(--text-dark); }
-        .job-company { font-weight: 500; font-size: 0.9rem; color: var(--accent-main); }
+        .job-title { font-weight: 700; font-size: 1rem; color: var(--text-dark); }
+        .job-company { font-weight: 500; font-size: 0.95rem; color: var(--accent-main); }
         .job-date {
-            font-size: 0.75rem; color: var(--text-light);
-            text-align: right; min-width: 100px;
+            font-size: 0.8rem; color: var(--text-light);
+            text-align: right; min-width: 110px;
         }
 
-        .job-desc { list-style: none; color: var(--text-light); font-size: 0.85rem; }
+        .job-desc { list-style: none; color: var(--text-light); font-size: 0.9rem; }
         .job-desc li {
-            margin-bottom: 2px; padding-left: 12px; position: relative;
+            margin-bottom: 4px; padding-left: 15px; position: relative;
         }
         .job-desc li::before {
             content: "▹"; position: absolute; left: 0;
-            font-size: 0.8em; top: 2px; color: var(--primary-color);
+            font-size: 0.8em; top: 3px; color: var(--primary-color);
         }
 
         .en-only { display: none !important; }
@@ -136,11 +137,15 @@
 
         .lang-toggle {
             position: fixed; top: 20px; right: 20px;
-            padding: 10px 20px; background: var(--accent-main); color: white;
-            border: none; border-radius: 5px; cursor: pointer;
-            font-weight: bold; box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+            padding: 10px 20px; 
+            background: var(--accent-main); 
+            color: var(--primary-color); 
+            border: 2px solid var(--white); 
+            border-radius: 5px; cursor: pointer;
+            font-weight: 800; box-shadow: 0 2px 5px rgba(0,0,0,0.3);
             z-index: 1000; font-family: sans-serif;
         }
+        .lang-toggle:hover { background: var(--white); color: var(--accent-main); border-color: var(--accent-main); }
 
         @media screen and (max-width: 768px) {
             .page {
@@ -151,10 +156,10 @@
             .contact-item { justify-content: center; }
             .main-content { padding: 20px; }
             .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 5px; }
-            .skills-list li { display: inline-block; margin: 0; font-size: 0.8rem; }
+            .skills-list li { display: inline-block; margin: 0; font-size: 0.85rem; }
             .job-header { flex-direction: column; align-items: flex-start; }
             .job-date { text-align: left; margin-bottom: 5px; font-style: italic; }
-            .lang-toggle { top: auto; bottom: 20px; right: 20px; opacity: 0.9; }
+            .lang-toggle { top: auto; bottom: 20px; right: 20px; opacity: 1; }
         }
 
         @media print {
@@ -166,23 +171,25 @@
                 grid-template-columns: 32% 68%;
                 background: white !important;
             }
-            .sidebar { text-align: left; padding: 20px 15px; }
+            .sidebar { text-align: left; padding: 25px 20px; }
             .contact-item { justify-content: flex-start; }
             .skills-list { display: block; }
-            .skills-list li { display: list-item; margin-bottom: 5px; }
+            .skills-list li { display: list-item; margin-bottom: 8px; }
             .job-header { flex-direction: row; align-items: baseline; }
             .logo-container img { background: white !important; }
+            h3.section-title-side { color: white !important; border-bottom-color: var(--accent-sidebar) !important; -webkit-print-color-adjust: exact; }
+            .sidebar { background-color: var(--primary-color) !important; -webkit-print-color-adjust: exact; }
         }
     </style>
 </head>
 <body lang="fr">
 
-    <button class="lang-toggle" onclick="toggleLang()">Switch FR / EN</button>
+    <button class="lang-toggle" onclick="toggleLang()" aria-label="Changer la langue / Switch language">FR / EN</button>
 
     <div class="page">
         <aside class="sidebar">
             <div class="logo-container">
-                <img src="logo.png" alt="M" onerror="this.style.display='none'; this.parentNode.innerHTML='<h1 style=\'font-size:3em; color:var(--accent-sidebar)\'>M</h1>'">
+                <img src="logo.png" alt="Logo M" onerror="this.style.display='none'; this.parentNode.innerHTML='<h1 style=\'font-size:3em; color:white\'>M</h1>'">
             </div>
 
             <div class="contact-info">
@@ -191,10 +198,10 @@
                 <div class="contact-item"><span>✉️</span> <span class="contact-text">clement.maillot.qc@gmail.com</span></div>
             </div>
 
-            <div class="section-title-side">
+            <h3 class="section-title-side">
                 <span class="fr-only">Compétences</span>
                 <span class="en-only">Skills</span>
-            </div>
+            </h3>
             <ul class="skills-list">
                 <li>
                     <strong class="fr-only">Web Front:</strong><strong class="en-only">Web Front:</strong> 
@@ -214,10 +221,10 @@
                 </li>
             </ul>
 
-            <div class="section-title-side">
+            <h3 class="section-title-side">
                 <span class="fr-only">Qualités</span>
                 <span class="en-only">Soft Skills</span>
-            </div>
+            </h3>
             <ul class="skills-list">
                 <li><span class="fr-only">• Leadership</span><span class="en-only">• Leadership</span></li>
                 <li><span class="fr-only">• Résolution de problèmes</span><span class="en-only">• Problem Solving</span></li>
@@ -225,20 +232,20 @@
                 <li><span class="fr-only">• Sens du service</span><span class="en-only">• Customer Oriented</span></li>
             </ul>
 
-            <div class="section-title-side">
+            <h3 class="section-title-side">
                 <span class="fr-only">Langues</span>
                 <span class="en-only">Languages</span>
-            </div>
+            </h3>
             <ul class="skills-list">
                 <li><span class="fr-only">Français (Natif)</span><span class="en-only">French (Native)</span></li>
                 <li><span class="fr-only">Anglais (Courant)</span><span class="en-only">English (Fluent)</span></li>
                 <li><span class="fr-only">Allemand (Intermédiaire)</span><span class="en-only">German (Intermediate)</span></li>
             </ul>
             
-             <div class="section-title-side">
+             <h3 class="section-title-side">
                 <span class="fr-only">Intérêts</span>
                 <span class="en-only">Interests</span>
-            </div>
+            </h3>
             <ul class="skills-list">
                <li><span class="fr-only">Rugby / Escalade</span><span class="en-only">Rugby / Climbing</span></li>
                <li><span class="fr-only">Jeux Vidéo / Tech</span><span class="en-only">Video Games / Tech</span></li>
@@ -262,10 +269,10 @@
                 </p>
             </header>
 
-            <div class="section-title-main">
+            <h3 class="section-title-main">
                 <span class="fr-only">Expériences Professionnelles</span>
                 <span class="en-only">Professional Experience</span>
-            </div>
+            </h3>
 
             <div class="experience-item">
                 <div class="job-header">
@@ -355,10 +362,10 @@
                 </ul>
             </div>
 
-            <div class="section-title-main">
+            <h3 class="section-title-main">
                 <span class="fr-only">Formation</span>
                 <span class="en-only">Education</span>
-            </div>
+            </h3>
 
             <div class="education-item">
                 <div class="job-header">
@@ -392,11 +399,15 @@
 
     <script>
         function toggleLang() {
-            const body = document.body;
-            if (body.getAttribute('lang') === 'fr') {
-                body.setAttribute('lang', 'en');
+            const htmlTag = document.documentElement;
+            const bodyTag = document.body;
+            
+            if (htmlTag.getAttribute('lang') === 'fr') {
+                htmlTag.setAttribute('lang', 'en');
+                bodyTag.setAttribute('lang', 'en');
             } else {
-                body.setAttribute('lang', 'fr');
+                htmlTag.setAttribute('lang', 'fr');
+                bodyTag.setAttribute('lang', 'fr');
             }
         }
     </script>
